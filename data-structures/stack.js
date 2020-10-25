@@ -7,6 +7,7 @@ class Stack {
     push(value) {
         const size = ++this._size;
         this._storage[size] = value;
+        return this;
     }
 
     pop() {
@@ -14,7 +15,12 @@ class Stack {
          if (size) {
             const deletedData = this._storage[size];
             this._size-- ;
-            return deletedData;
-         }
+            console.log(deletedData);
+        }
+        return this
     }
 }
+
+const newStack = new Stack()
+
+newStack.push(1).push(10).pop();
