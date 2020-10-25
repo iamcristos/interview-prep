@@ -43,6 +43,49 @@ class LinkedList {
         this.size += 1
         return this;
     }
+
+    search(value) {
+        let current = this.head;
+        if(value === current.value) {
+            return current
+        }
+        while(current.next) {
+            if(current.value === value) {
+                return current
+            }
+            current = current.next
+        }
+         if(value === current.value) {
+            return current
+        }
+        return 'item not found'
+    }
+
+    deleteNode(value) {
+        let current = this.head;
+        let previous = null;
+        if(value === current.value) {
+           if(current.next) {
+               this.head = current.next
+           }else {
+               this.head = null
+           }
+           return this;
+        }
+        while(current.next) {
+            if(current.value === value) {
+                previous.next = current.next
+                return this;
+            }
+            previous = current
+            current = current.next
+        }
+         if(value === current.value) {
+             current = null
+            return this;
+        }
+        return 'item not found'
+    }
 }
 
 const node1 = new Node(10);
@@ -53,4 +96,4 @@ linked.addNode(20).addNode(30).addNode(40).addNode(6)
 linked.addNode(1)
 linked.addNodeIndex(5, 0)
 
-console.log(linked.size, linked.head)
+console.log(linked.deleteNode(400),linked.search(40))
