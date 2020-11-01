@@ -5,7 +5,6 @@ function bubbleSort(data) {
         swap = false;
         for (let i = 0; i < length; i++) {
            if(data[i] < data[i+1]) {
-               console.log(i)
             const temp = data[i]
             data[i] = data[i+1]
             data[i+1] = temp
