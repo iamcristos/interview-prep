@@ -63,7 +63,7 @@ class LinkedList {
 
     deleteNode(value) {
         let current = this.head;
-        let previous = null;
+        let previous = current;
         if(value === current.value) {
            if(current.next) {
                this.head = current.next
